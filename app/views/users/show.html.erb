@@ -1,0 +1,33 @@
+<h1 class="page-header">
+  <h1> <%= @user.name %></h1>
+  <p> <%= @user.email %></p>
+</h1>
+<div class="col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4> <%= link_to "Add Pet", new_user_pet_path(@user) %> </h4>
+    </div>
+    <div class="panel-body">
+
+      <table id="PetsTable" class="col-md-12 table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Breed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @pets.each do |pet| %>
+            <tr>
+              <td><%= pet.name %></td>
+              <td><%= pet.pet_type %></td>
+              <td><%= pet.breed %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

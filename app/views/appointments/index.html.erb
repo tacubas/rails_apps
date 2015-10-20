@@ -1,0 +1,34 @@
+<h1 class="page-header">
+  Appointments
+</h1>
+<div class="col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4> <%= #link_to "Add User", new_user_path %> </h4>
+    </div>
+    <div class="panel-body">
+
+      <table id="AppointmentsTable" class="col-md-12 table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Customer</th>
+            <th>Pet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @appointments.each do |appointment| %>
+            <tr>
+              <td><%= appointment.date %></td>
+              <td><%= appointment.doctor.name %></td>
+              <td><%= appointment.customer.name %></td>
+              <td><%= appointment.pet.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

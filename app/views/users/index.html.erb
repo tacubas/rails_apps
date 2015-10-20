@@ -1,0 +1,30 @@
+<h1 class="page-header">
+  Users
+</h1>
+<div class="col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h4> <%= link_to "Add User", new_user_path %> </h4>
+    </div>
+    <div class="panel-body">
+
+      <table id="UsersTable" class="col-md-12 table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

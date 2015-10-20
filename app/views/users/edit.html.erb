@@ -1,0 +1,33 @@
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <i class="glyphicon glyphicon-wrench pull-right"></i>
+        <h4>Edit <%= @user.role_type.to_s + @user.name.to_s %></h4>
+      </div>
+    </div><!--head-->
+    <div class="panel-body">
+      <div class="form-inputs">
+        <div class="col-md-6">
+          <%= simple_form_for @user do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name, required: true, autofocus: true %>
+            <%= f.input :email, required: true %>
+            <%= f.input :address %>
+            <%= f.input :city %>
+            <%= f.input :state %>
+            <%= f.input :zip %>
+            <% if @user.role_type == 'Doctor' %>
+              <%= f.input :school %>
+              <%= f.input :years %>
+            <% end %>
+        </div><!--col 6-->
+
+        <div class="form-actions col-md-10">
+          <%= f.button :submit, class: 'btn btn-primary btn-lg pull-right' %>
+        </div>
+          <% end %>
+      </div>
+    </div><!--body-->
+  </div><!--content-->
+</div><!--col 12-->
